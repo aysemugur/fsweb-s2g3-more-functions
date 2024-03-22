@@ -16,10 +16,9 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(path) {
+  return path.split('/').at(-1);
 }
-
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
@@ -36,10 +35,19 @@ function dosyaAdiniBul(/* kodlar buraya */) {
 
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: 104
+
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+
+function ortalamaBul(sayiArr) {
+  if (sayiArr.length===0){
+    return null;
+  }
+  let result = 0;
+  for (let i=0; i<sayiArr.length;i++){
+      result+=sayiArr[i]
+  }
+  return result/sayiArr.length
 }
 
 /*
@@ -62,8 +70,19 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(sayiArr,ortalamaBul) {
+  if (sayiArr.length===0){
+    return null;
+  }
+
+  let ortalama = ortalamaBul(sayiArr);
+  let newArr=[];
+  for(let i=0; i<sayiArr.length;i++){
+    if(sayiArr[i]>=ortalama){
+      newArr.push(sayiArr[i]);
+    }
+  }
+  return newArr;
 }
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
